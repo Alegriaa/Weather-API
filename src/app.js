@@ -11,6 +11,8 @@ const forecast = require('./utils/forecast')
 
 // store the app
 const app = express()
+    // extracting the environment variable from Heroku
+const port = process.env.PORT || 3000
 
 // console.log(__dirname)
 // console.log(path.join(__dirname, '../public'))
@@ -121,6 +123,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
